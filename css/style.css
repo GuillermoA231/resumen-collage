@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#footer{
+    height: 100%;
+}
+#footer img{
+    max-width: 100%;
+    width: 100%;
+}
+#mainDiv{
+    width: 800px;
+    height:100%;
+    overflow: hidden;
+}
+#header img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+#collage img{
+    width: 150px;
+    height: 150px;
+}
