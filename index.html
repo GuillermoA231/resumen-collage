@@ -54,6 +54,7 @@
       </nav>
     </header>
     <main>
+      <!--Maquetado Resumen-->
       <article
         class="d-flex justify-content-center align-items-center flex-column"
       >
@@ -165,11 +166,12 @@
           </button>
         </section>
       </article>
+      <!-- formulario Resumen collage-->
       <section class="modal fade" tabindex="-1" id="modalEditar" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Añadir Servicio</h5>
+              <h5 class="modal-title">Ingrese los datos</h5>
               <button
                 id="btnCrear"
                 type="button"
@@ -179,7 +181,7 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form id="formServicio">
+              <form id="formResumen">
                 <aside class="row mt-2">
                   <div class="col-md-6">
                     <label for="fecha" class="form-label fw-semibold"
@@ -396,5 +398,5 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   <script src="./js/capturaPantalla.js"></script>
-  <script src="./js/modalCarga.js"></script>
+  <script src="./js/modalCarga.js" type="module"></script>
 </html>
