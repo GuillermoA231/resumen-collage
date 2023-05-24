@@ -1,20 +1,16 @@
 import Resumen from "./classResumen.js";
 import { resumenValidacion } from "./helpers.js";
 
-let formResumen = document.getElementById(`formServicio`);
-let modalResumen = new bootstrap.Modal(document.getElementById("modalEditar"));
-const btnCrearResumen = document.getElementById(`btnCrear`);
-const alertaModal = document.getElementById(`alertaModal`);
-const alertaaModal = document.getElementById(`alertaAModal`);
+//variables globales
+let formularioResumen = document.getElementById('formPelicula');
 
-let fecha = document.getElementById(`fecha`),
-  categoria = document.getElementById(`categoria`),
-  areaProgramatica = document.getElementById(`areaProgramatica`),
-  areaOperativa = document.getElementById(`areaOperativa`),
-  descripcion = document.getElementById(`descripcion`);
+//manejadores de eventos
+formularioResumen.addEventListener('submit',prepararFormularioResumen)
 
-let altaResumen = true;
-let listaResumen = JSON.parse(localStorage.getItem("listaResumenes")) || [];
+//funciones
+function prepararFormularioResumen(e){
 
-formResumen.addEventListener("submit", prepararFormularioResumen);
-btnCrearResumen.addEventListener("click", desplegarmodalResumen);
+}
+function crearResumen(){
+  
+}
