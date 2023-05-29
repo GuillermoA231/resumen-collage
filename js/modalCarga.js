@@ -10,6 +10,7 @@ let fileList = [];
 let collageImages = [];
 
 formularioResumen.addEventListener("submit", prepararFormularioResumen);
+
 customBtn.addEventListener("click", function () {
   realFileBtn.click();
 });
@@ -38,6 +39,7 @@ realFileBtn.addEventListener("change", function () {
 });
 
 function prepararFormularioResumen(e) {
+  document.querySelector('section').removeAttribute('hidden');
   e.preventDefault();
   crearResumen();
   renderCollage();
