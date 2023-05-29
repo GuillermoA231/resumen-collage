@@ -63,6 +63,7 @@ function updateCollage() {
 }
 function renderCollage() {
   let uploadedImages = imagePreview.getElementsByTagName("img");
+  let collageWidth = 800; // Specify the desired width for the collage
 
   if (uploadedImages.length === 9) {
     collage.innerHTML = "";
@@ -79,13 +80,16 @@ function renderCollage() {
       image.src = uploadedImages[i].src;
 
       // Apply custom classes based on image resolution
-      if (i === 0 || i === 5 || i === 6) {
+      if (i === 0 || i === 4 || i === 6) {
         column.classList.add("image-container", "image-2x2");
       } else {
         column.classList.add("image-container");
       }
 
-      
+      let width = Math.floor(collageWidth / 2); // Adjust as needed
+      let height = Math.floor(width / 1.2); // Adjust the aspect ratio as needed
+      column.style.width = `${width}px`;
+      column.style.height = `${height}px`;
 
       column.appendChild(image);
       row.appendChild(column);
