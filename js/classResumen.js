@@ -11,7 +11,6 @@ export default class Resumen {
     this.#categoria = categoria;
     this.#areaOperativa = areaOperativa;
     this.#areaProgramatica = areaProgramatica;
-    this.#descripcion = descripcion;
   }
   //getters
   get fecha() {
@@ -24,10 +23,7 @@ export default class Resumen {
     return this.#areaOperativa;
   }
   get areaProgramatica() {
-    return this.#areaProgramatica;
-  }
-  get descripcion(){
-    return this.#descripcion;
+    return this.areaProgramatica;
   }
   //setteres
   set fecha(fecha) {
@@ -41,8 +37,5 @@ export default class Resumen {
   }
   set areaProgramatica(areaProgramatica) {
     this.#areaProgramatica = areaProgramatica;
-  }
-  set descripcion(descripcion) {
-    this.#descripcion = descripcion;
   }
 }

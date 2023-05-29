@@ -1,6 +1,5 @@
 
-
-document.getElementById('btnDescargar').addEventListener('click', function() {
+document.getElementById('src-btn').addEventListener('click', function() {
     var images = document.querySelectorAll('#mainDiv img');
     images.forEach(function(img) {
       img.setAttribute('crossOrigin', 'anonymous');

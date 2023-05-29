@@ -1,79 +1,98 @@
 import Resumen from "./classResumen.js";
-import { resumenValidaciones } from "./helpers.js";
 
-//variables globales
 let formularioResumen = document.getElementById("formResumen");
-let modalResumen = document.getElementById("modalResumen");
-const btnCrearResumen = document.querySelector("#btnCrearResumen");
-let listaResumen = [];
-/*se obtiene cada input del formulario*/
-let fecha = document.getElementById("fecha"),
-  categoria = document.getElementById("categoria"),
-  areaOperativa = document.getElementById("areaOperativa"),
-  areaProgramatica = document.getElementById("areaProgramatica"),
-  descripcion = document.getElementById("descripcion");
-//manejadores de eventos
+let realFileBtn = document.getElementById("real-file");
+let customBtn = document.getElementById("custom-button");
+let customTxt = document.getElementById("custom-text");
+let imagePreview = document.getElementById("image-preview");
+let collage = document.getElementById("collage");
+let fileList = [];
+let collageImages = [];
+
 formularioResumen.addEventListener("submit", prepararFormularioResumen);
-btnCrearResumen.addEventListener("click", desplegarModalResumen);
-//
+customBtn.addEventListener("click", function () {
+  realFileBtn.click();
+});
 
-//funciones
+realFileBtn.addEventListener("change", function () {
+  if (realFileBtn.files && realFileBtn.files.length > 0) {
+    fileList = Array.from(realFileBtn.files);
+    customTxt.innerHTML = `${fileList.length} archivo(s) seleccionado(s)`;
+    imagePreview.innerHTML = "";
 
-export function formatDate(input) {
-  input.value = input.value.replace(/\D/g, "");
-  if (input.value.length > 2 && input.value.length <= 4) {
-    input.value = input.value.slice(0, 2) + "/" + input.value.slice(2);
-  } else if (input.value.length > 4 && input.value.length <= 6) {
-    input.value =
-      input.value.slice(0, 2) +
-      "/" +
-      input.value.slice(2, 4) +
-      "/" +
-      input.value.slice(4);
-  } else if (input.value.length > 6) {
-    input.value =
-      input.value.slice(0, 2) +
-      "/" +
-      input.value.slice(2, 4) +
-      "/" +
-      input.value.slice(4, 8);
+    fileList.forEach((file) => {
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        let img = document.createElement("img");
+        img.src = e.target.result;
+        img.classList.add("preview-image");
+        imagePreview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  } else {
+    fileList = [];
+    customTxt.innerHTML = "No archivos seleccionados";
+    imagePreview.innerHTML = "";
   }
-}
-
-function desplegarModalResumen() {
-  modalResumen.show();
-}
+});
 
 function prepararFormularioResumen(e) {
   e.preventDefault();
-  console.log("en el evento submit");
   crearResumen();
+  renderCollage();
+  updateCollage();
 }
+
 function crearResumen() {
-  // Validar Datos
-  //console logs para verificar read de inputs
-  console.log(fecha.value);
-  console.log(categoria.value);
-  console.log(areaOperativa.value);
-  console.log(areaProgramatica.value);
-  console.log(descripcion.value);
-  const resumen = resumenValidaciones(fecha.value);
-  // Los datos son validos?
-  if (resumen.length === 0) {
-    // Crear Resumen
-    const resumenEjemplo = new Resumen(
-      "24/05/2023",
-      "Covid",
-      "Área Operativa Mariano Moreno",
-      "Área Programática Centro",
-      "Descripción ejemplo"
-    );
-    console.log(resumenEjemplo);
+  
+}
+
+function updateCollage() {
+  let fileList = realFileBtn.files;
+
+  if (fileList.length === 9) {
+    for (let i = 0; i < collageImages.length; i++) {
+      collageImages[i].src = URL.createObjectURL(fileList[i]);
+    }
   } else {
-    console.log("Ocurrieron errores");
+    console.log("Please select exactly 9 images.");
   }
+}
 
-  // Agregar el resuemn en el arreglo de resumenes
+function renderCollage() {
+  let uploadedImages = imagePreview.getElementsByTagName("img");
 
-  // Guardar elarray en localStorage
+  if (uploadedImages.length === 9) {
+    collage.innerHTML = "";
+
+    let rowIndex = 0;
+    let columnCount = 0;
+    let row = document.createElement("div");
+    row.classList.add("row");
+
+    for (let i = 0; i < uploadedImages.length; i++) {
+      let column = document.createElement("div");
+      column.classList.add("col");
+      let image = document.createElement("img");
+      image.src = uploadedImages[i].src;
+      column.appendChild(image);
+      row.appendChild(column);
+      columnCount++;
+
+      if (columnCount === 3) {
+        collage.appendChild(row);
+        rowIndex++;
+        row = document.createElement("div");
+        row.classList.add("row");
+        columnCount = 0;
+      }
+    }
+
+    if (columnCount > 0) {
+      collage.appendChild(row);
+    }
+
+    collageImages = Array.from(collage.getElementsByTagName("img"));
+  }
 }
