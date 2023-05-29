@@ -59,7 +59,6 @@ function updateCollage() {
     console.log("Please select exactly 9 images.");
   }
 }
-
 function renderCollage() {
   let uploadedImages = imagePreview.getElementsByTagName("img");
 
@@ -76,6 +75,16 @@ function renderCollage() {
       column.classList.add("col");
       let image = document.createElement("img");
       image.src = uploadedImages[i].src;
+
+      // Apply custom classes based on image resolution
+      if (i === 0 || i === 5 || i === 6) {
+        column.classList.add("image-container", "image-2x2");
+      } else {
+        column.classList.add("image-container");
+      }
+
+      
+
       column.appendChild(image);
       row.appendChild(column);
       columnCount++;
