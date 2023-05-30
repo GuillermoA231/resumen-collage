@@ -34,7 +34,6 @@
     justify-content: center;
   }
   #collage .image-container {
-    flex-basis: calc(30% - 10px);
     padding: 2px !important;
   }
   
@@ -49,6 +48,6 @@
   }
   
   .image-2x2 {
-    flex-basis: calc(33.33% - 10px) !important;
+    flex-basis: calc(28.33% - 10px) !important;
   }
   
