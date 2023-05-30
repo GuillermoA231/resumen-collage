@@ -13,7 +13,6 @@ function prepararFormularioResumen(e) {
   e.preventDefault();
   crearResumen();
   renderCollage();
-  updateCollage();
 }
 
 function crearResumen() {
