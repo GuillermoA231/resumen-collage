@@ -34,7 +34,7 @@ function validarDescripcion() {
 }
 
 
-export function resumenValidaciones() {
+export function resumenValidacion() {
   const fechaInput = document.getElementById("fecha");
   const areaOperativaSelect = document.getElementById("areaOperativa");
   const descripcionTextarea = document.getElementById("descripcion");
