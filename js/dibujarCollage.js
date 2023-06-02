@@ -3,10 +3,11 @@ let realFileBtn = document.getElementById("real-file");
 let customBtn = document.getElementById("custom-button");
 let customTxt = document.getElementById("custom-text");
 let imagePreview = document.getElementById("image-preview");
-let collage = document.getElementById("collageMain");
 let fileList = [];
 let collageImages = [];
-console.log(`  +   +   +   +  +  +  +  +  +  +  +  +`)
+
+console.log(`  +   +   +   +  +  +  +  +  +  +  +  +`);
+
 customBtn.addEventListener("click", function () {
   realFileBtn.click();
 });
@@ -91,7 +92,7 @@ function renderCollage() {
 
     collageImages = Array.from(collage.getElementsByTagName("img"));
 
-    // Move the sixth image to the third row
+    // Mover la sexta imagen a la tercera fila
     if (uploadedImages.length === 6) {
       let sixthImage = collageImages[5];
       let rowElements = Array.from(collage.getElementsByClassName("row"));
@@ -107,6 +108,16 @@ function renderCollage() {
       }
     }
   } else {
-    console.log("Please upload between 6 and 9 images before generating the collage.");
+    console.log(
+      "Por favor, carga entre 6 y 9 imágenes antes de generar el collage."
+    );
   }
 }
+
+function dibujarCollage() {
+  var collage = document.getElementById("collageMain");
+  renderCollage();
+}
+
+// Agrega la siguiente línea si deseas ejecutar `dibujarCollage()` al cargar la página:
+// dibujarCollage();
