@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../css/modalesSwal.css" />
+    <link rel="stylesheet" href="./css/modalesSwal.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -35,7 +35,11 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <button class="btn btn-success mx-md-3 btn-lg" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                <button
+                  class="btn btn-success mx-md-3 btn-lg"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalEditar"
+                >
                   Agregar Nuevo Servicio <i class="bi bi-plus-square"></i>
                 </button>
               </li>
@@ -58,107 +62,8 @@
       <article
         class="d-flex justify-content-center align-items-center flex-column"
       >
-        <section>
-          <div class="container text-center" id="mainDiv">
-            <div
-              class="row d-flex align-items-center justify-content-center fw-bold display-5"
-              id="fecha"
-            >
-              14/4/2004
-            </div>
-            <div class="row" id="header">
-              <div class="bg-danger">
-                <img
-                  src="./img/categoria.png"
-                  class="img-fluid"
-                  alt="Imagen 1"
-                />
-              </div>
-              <div
-                class="col-4 bg-primary d-flex justify-content-center align-items-center"
-              ></div>
-            </div>
-            <div class="row h2">
-              <div id="categoria">Categoria Covid</div>
-              <div id="titulo">Titulo Resumen Vacunacion Covid</div>
-            </div>
-            <div class="row">
-              <div class="col-12 bg-info h4 m-0 p-3" id="title">
-                Descripcion Resumen Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quaerat accusantium culpa optio quam.
-                Dignissimos illum sint, dolorum commodi ipsum ducimus natus ea,
-                provident ullam numquam odit quidem ut ipsam repellat possimus
-                molestias! Quam obcaecati nam sapiente ratione animi totam quae
-                nulla, ipsa eos hic fugit, distinctio dolor asperiores quo modi!
-              </div>
-            </div>
-            <div class="row bg-warning-subtle" id="collage">
-              <div class="col-12" id="collageMain">
-                <div class="row">
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                  <div class="col">
-                    <img src="./img/test1.jpeg" class="" alt="Imagen 4" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row bg-primary" id="footer">
-              <div class="col-4">
-                <img
-                  id="area"
-                  class="img-thumbnail"
-                  src="./img/logoMSP.png"
-                  alt="Logo Banner"
-                  srcset=""
-                />
-              </div>
-              <div class="col-4">
-                <img
-                  id="nombreLogo"
-                  class="img-thumbnail"
-                  src="./img/logoMSP.png"
-                  alt="Logo Banner"
-                  srcset=""
-                />
-              </div>
-              <div class="col-4">
-                <img
-                  id="logo"
-                  class="img-thumbnail"
-                  src="./img/logoMSP.png"
-                  alt="Logo Banner"
-                  srcset=""
-                />
-              </div>
-            </div>
-          </div>
+        <section class="container text-center" id="seccionResumen">
+         
         </section>
         <section class="my-4">
           <button id="src-btn" class="btn btn-primary rounded-4">
@@ -166,14 +71,19 @@
           </button>
         </section>
       </article>
-      <!-- formulario Resumen collage-->
-      <section class="modal fade" tabindex="-1" id="modalEditar" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- formulario/Modal Resumen collage-->
+      <section
+        class="modal fade"
+        tabindex="-1"
+        id="modalEditar"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Ingrese los datos</h5>
               <button
-                id="btnCrear"
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
@@ -195,7 +105,7 @@
                       pattern="\d{2}/\d{2}/\d{4}"
                       title="Por favor, ingresa una fecha válida en el formato DD/MM/YYYY"
                       onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-                      oninput="formatDate(this)"
+                      oninput="formatDate(this);validateDate(this)"
                       class="form-control border border-1"
                     />
                   </div>
@@ -225,8 +135,39 @@
                           input.value.slice(4, 8);
                       }
                     }
+                    function validateDate(input) {
+                      var dateParts = input.value.split("/");
+                      var day = parseInt(dateParts[0], 10);
+                      var month = parseInt(dateParts[1], 10);
+                      var year = parseInt(dateParts[2], 10);
+                      console.log(day + " X " + month + " X " + year);
+
+                      var currentDate = new Date();
+                      var currentYear = currentDate.getFullYear();
+
+                      // Validar día y mes
+                      var isValidDay = day >= 1 && day <= 31;
+                      var isValidMonth = month >= 1 && month <= 12;
+                      var isValidDate = isValidDay && isValidMonth;
+
+                      // Validar año
+                      var isValidYear = year >= 2001 && year <= currentYear;
+
+                      // Establecer mensajes de error personalizados
+                      if (!isValidDate) {
+                        input.setCustomValidity(
+                          "La fecha ingresada es inválida."
+                        );
+                      } else if (!isValidYear) {
+                        input.setCustomValidity(
+                          "El año debe estar entre 2001 y " + currentYear + "."
+                        );
+                      } else {
+                        input.setCustomValidity("");
+                      }
+                    }
                   </script>
-      
+
                   <div class="col-md-6">
                     <label for="categoria" class="form-label fw-semibold mt-2"
                       >Categoria:</label
@@ -244,55 +185,14 @@
                   </div>
                 </aside>
                 <aside class="row mt-2">
-                  <div class="col-md-6">
-                    <label for="areaProgramatica" class="form-label fw-semibold mt-2"
-                      >Area Operativa:</label
-                    >
-                    <select
-                      id="areaOperativa"
-                      class="form-select border border-1"
-                      required=""
-                    >
-                      <option value="">Seleccione:</option>
-                      <option>AREA OPERATIVA TAFI VIEJO</option>
-                      <option>AREA OPERATIVA TRANCAS</option>
-                      <option>AREA OPERATIVA LULES</option>
-                      <option>AREA OPERATIVA ALTA MONTAÑA</option>
-                      <option>AREA OPERATIVA SAN PABLO</option>
-                      <option>AREA OPERATIVA FAMAILLA</option>
-                      <option>AREA OPERATIVA TAFI DEL VALLE</option>
-                      <option>AREA OPERATIVA EL CADILLAL</option>
-                      <option>AREA OPERATIVA VALLES CALCHAQUIES</option>
-                      <option>AREA OPERATIVA ALDERETES</option>
-                      <option>AREA OPERATIVA BANDA RIO SALI</option>
-                      <option>AREA OPERATIVA BELLA VISTA</option>
-                      <option>AREA OPERATIVA BURRUYACU</option>
-                      <option>AREA OPERATIVA EL BRACHO</option>
-                      <option>AREA OPERATIVA EL TIMBO</option>
-                      <option>AREA OPERATIVA ESTACION ARAOZ</option>
-                      <option>AREA OPERATIVA GARMENDIA</option>
-                      <option>AREA OPERATIVA LA FLORIDA</option>
-                      <option>AREA OPERATIVA LA RAMADA</option>
-                      <option>AREA OPERATIVA LEALES</option>
-                      <option>AREA OPERATIVA LOS RALOS</option>
-                      <option>AREA OPERATIVA RANCHILLOS</option>
-                      <option>AREA OPERATIVA SANTA ANA</option>
-                      <option>AREA OPERATIVA AGUILARES</option>
-                      <option>AREA OPERATIVA GRANEROS</option>
-                      <option>AREA OPERATIVA CONCEPCION</option>
-                      <option>AREA OPERATIVA SIMOCA</option>
-                      <option>AREA OPERATIVA ALBERDI</option>
-                      <option>AREA OPERATIVA LA MADRID</option>
-                      <option>AREA OPERATIVA LA COCHA</option>
-                      <option>AREA OPERATIVA MONTEROS</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="areaProgramatica" class="form-label fw-semibold mt-2"
+                  <div class="col-md-4">
+                    <label
+                      for="areaProgramatica"
+                      class="form-label fw-semibold mt-2"
                       >Area Programatica:</label
                     >
                     <select
-                      id="categoria"
+                      id="areaProgramatica"
                       class="form-select border border-1"
                       required=""
                     >
@@ -303,19 +203,138 @@
                       <option>AREA PROGRAMATICA OESTE</option>
                     </select>
                   </div>
+                  <div class="col-md-4">
+                    <label
+                      for="areaProgramatica"
+                      class="form-label fw-semibold mt-2"
+                      >Area Operativa:</label
+                    >
+                    <select
+                      id="areaOperativa"
+                      class="form-select border border-1"
+                      required=""
+                    >
+                    <option value="">Seleccione:</option>
+                    <option>TAFI VIEJO</option>
+                    <option>TRANCAS</option>
+                    <option>LULES</option>
+                    <option>ALTA MONTAÑA</option>
+                    <option>SAN PABLO</option>
+                    <option>FAMAILLA</option>
+                    <option>TAFI DEL VALLE</option>
+                    <option>EL CADILLAL</option>
+                    <option>VALLES CALCHAQUIES</option>
+                    <option>ALDERETES</option>
+                    <option>BANDA RIO SALI</option>
+                    <option>BELLA VISTA</option>
+                    <option>BURRUYACU</option>
+                    <option>EL BRACHO</option>
+                    <option>EL TIMBO</option>
+                    <option>ESTACION ARAOZ</option>
+                    <option>GARMENDIA</option>
+                    <option>LA FLORIDA</option>
+                    <option>LA RAMADA</option>
+                    <option>LEALES</option>
+                    <option>LOS RALOS</option>
+                    <option>RANCHILLOS</option>
+                    <option>SANTA ANA</option>
+                    <option>AGUILARES</option>
+                    <option>GRANEROS</option>
+                    <option>CONCEPCION</option>
+                    <option>SIMOCA</option>
+                    <option>ALBERDI</option>
+                    <option>LA MADRID</option>
+                    <option>LA COCHA</option>
+                    <option>MONTEROS</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label
+                      for="efector"
+                      class="form-label fw-semibold mt-2"
+                      >Efector:</label
+                    >
+                    <select
+                      id="efector"
+                      class="form-select border border-1"
+                      required=""
+                    >
+                    <option value="">Seleccione:</option>
+                    <option>TAFI VIEJO</option>
+                    <option>TRANCAS</option>
+                    <option>LULES</option>
+                    <option>ALTA MONTAÑA</option>
+                    <option>SAN PABLO</option>
+                    <option>FAMAILLA</option>
+                    <option>TAFI DEL VALLE</option>
+                    <option>EL CADILLAL</option>
+                    <option>VALLES CALCHAQUIES</option>
+                    <option>ALDERETES</option>
+                    <option>BANDA RIO SALI</option>
+                    <option>BELLA VISTA</option>
+                    <option>BURRUYACU</option>
+                    <option>EL BRACHO</option>
+                    <option>EL TIMBO</option>
+                    <option>ESTACION ARAOZ</option>
+                    <option>GARMENDIA</option>
+                    <option>LA FLORIDA</option>
+                    <option>LA RAMADA</option>
+                    <option>LEALES</option>
+                    <option>LOS RALOS</option>
+                    <option>RANCHILLOS</option>
+                    <option>SANTA ANA</option>
+                    <option>AGUILARES</option>
+                    <option>GRANEROS</option>
+                    <option>CONCEPCION</option>
+                    <option>SIMOCA</option>
+                    <option>ALBERDI</option>
+                    <option>LA MADRID</option>
+                    <option>LA COCHA</option>
+                    <option>MONTEROS</option>
+                    </select>
+                    </select>
+                  </div>
                 </aside>
-                <label for="descripcion" class="form-label fw-semibold mt-2"
-                  >Descripción:</label
-                >
-                <textarea
-                  id="descripcion"
-                  rows="4"
-                  placeholder="Escriba aqui la descripcion del servicio."
-                  minlength="8"
-                  maxlength="512"
-                  required=""
-                  class="form-control border border-1 mb-3"
-                ></textarea>
+                <div class="container-titulo">
+                  <label for="titulo" class="form-label fw-semibold mt-2"
+                    >Titulo:</label
+                  >
+                  <textarea
+                    id="titulo"
+                    placeholder="Escriba aqui el titulo del resumen"
+                    rows="1"
+                    minlength="10"
+                    maxlength="50"
+                    required
+                    class="form-control border border-1 mb-3"
+                  ></textarea>
+                </div>
+                <div class="container-descripcion">
+                  <label for="descripcion" class="form-label fw-semibold mt-2"
+                    >Descripción:</label
+                  >
+                  <textarea
+                    id="descripcion"
+                    rows="4"
+                    placeholder="Escriba aqui la descripcion del servicio."
+                    minlength="10"
+                    maxlength="250"
+                    required=""
+                    class="form-control border border-1 mb-3"
+                  ></textarea>
+                </div>
+                <div class="container-imagenes">
+                  <input type="file" id="real-file" hidden="hidden" multiple />
+                  <button type="button" id="custom-button">
+                    Elige archivos
+                  </button>
+                  <span id="custom-text">No archivos seleccionados</span>
+                  <div
+                    id="image-preview"
+                    class="img-container"
+                    hidden="hidden"
+                  ></div>
+                </div>
                 <div
                   class="alert alert-danger mt-3 d-none"
                   role="alert"
@@ -328,6 +347,14 @@
                     id="btnCrear"
                   >
                     Enviar
+                  </button>
+                  <button
+                    class="btn btn-outline-primary mt-3 text-end"
+                    type="button"
+                    id="btnGenerarImagenes"
+                    onclick="dibujarCollage()"
+                  >
+                    Generar imagenes
                   </button>
                 </div>
               </form>
@@ -398,5 +425,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   <script src="./js/capturaPantalla.js"></script>
+  <script src="./js/helpers.js" type="module"></script>
   <script src="./js/modalCarga.js" type="module"></script>
+  <script src="./js/dibujarCollage.js"></script>
 </html>
