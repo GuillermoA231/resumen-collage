@@ -119,5 +119,11 @@ function dibujarCollage() {
   renderCollage();
 }
 
-// Agrega la siguiente línea si deseas ejecutar `dibujarCollage()` al cargar la página:
-// dibujarCollage();
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btnCrear').addEventListener('click', function() {
+    setTimeout(function() {
+      dibujarCollage();
+    }, 300);
+  });
+});
