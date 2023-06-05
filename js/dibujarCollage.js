@@ -40,43 +40,53 @@ function cargarImagenes() {
 }
 
 function renderCollage() {
-    let uploadedImages = imagePreview.getElementsByTagName("img");
-    let collageWidth = 1200; // ancho del div collage
-  
-    if (uploadedImages.length >= 6 && uploadedImages.length <= 9) {
-      collage.innerHTML = "";
-  
-      let rowIndex = 0;
-      let columnCount = 0;
-      let row = document.createElement("div");
-      row.classList.add("row");
-  
-      for (let i = 0; i < 9; i++) {
-        // Verificar si hay una imagen disponible para esa posición
-        if (i < uploadedImages.length && uploadedImages[i].src !== "") {
-          let column = document.createElement("div");
-          column.classList.add("col");
-          let image = document.createElement("img");
-          image.src = uploadedImages[i].src;
-          column.appendChild(image);
-  
-          // Verificar según resolución
-          if (i === 0 || i === 4 || i === 6) {
-            column.classList.add("image-container", "image-2x2");
-          } else {
-            column.classList.add("image-container");
-          }
-  
-          let maxWidth = Math.floor(collageWidth / 2); // ajusta ancho máximo
-          let maxHeight = Math.floor(maxWidth / 1.2); // ajusta altura máxima
-          column.style.maxWidth = `${maxWidth}px`;
-          column.style.maxHeight = `${maxHeight}px`;
-  
-          row.appendChild(column);
-          columnCount++;
+  let uploadedImages = imagePreview.getElementsByTagName("img");
+  let collageWidth = 1200; // ancho del div collage
+
+  let numImages = uploadedImages.length;
+
+  // Verificar la cantidad de imágenes cargadas
+  if (numImages >= 6 && numImages <= 9) {
+    collage.innerHTML = "";
+
+    let numRows = Math.ceil(numImages / 3);
+    let numColumns = 3;
+
+    let rowIndex = 0;
+    let columnCount = 0;
+    let row = document.createElement("div");
+    row.classList.add("row");
+
+    for (let i = numImages - 1; i >= 0; i--) {
+      // Verificar si hay una imagen disponible para esa posición
+      if (uploadedImages[i].src !== "") {
+        let column = document.createElement("div");
+        column.classList.add("col");
+        let image = document.createElement("img");
+        image.src = uploadedImages[i].src;
+        column.appendChild(image);
+        column.classList.add("image-container");
+
+        let maxWidth;
+        let maxHeight;
+
+        if (numImages === 7 && rowIndex === numRows - 1) {
+          // Última fila con una sola imagen
+          maxWidth = collageWidth;
+          maxHeight = Math.floor(collageWidth / numColumns * 1.2);
+        } else {
+          maxWidth = collageWidth / numColumns;
+          maxHeight = Math.floor(maxWidth / 1.2);
         }
-  
-        if (columnCount === 3) {
+
+        column.style.maxWidth = `${maxWidth}px`;
+        column.style.maxHeight = `${maxHeight}px`;
+
+        row.appendChild(column);
+        columnCount++;
+
+        if (columnCount === numColumns) {
+          row.classList.add("justify-content-end"); // Alinea las imágenes a la derecha
           collage.appendChild(row);
           rowIndex++;
           row = document.createElement("div");
@@ -84,14 +94,117 @@ function renderCollage() {
           columnCount = 0;
         }
       }
-  
-      if (columnCount > 0) {
-        collage.appendChild(row);
-      }
-  
-      collageImages = Array.from(collage.getElementsByTagName("img"));
-    } else {
-      console.log("Por favor, carga entre 6 y 9 imágenes antes de generar el collage.");
     }
+
+    if (columnCount > 0) {
+      row.classList.add("justify-content-end"); // Alinea las imágenes a la derecha
+      collage.appendChild(row);
+    }
+
+    collageImages = Array.from(collage.getElementsByTagName("img"));
+  } else {
+    console.log(
+      "Por favor, carga entre 6 y 9 imágenes antes de generar el collage."
+    );
   }
-  
+}
+
+
+function renderCollage() {
+  let uploadedImages = imagePreview.getElementsByTagName("img");
+  let collageWidth = 1200; // ancho del div collage
+
+  let numImages = uploadedImages.length;
+
+  // Verificar la cantidad de imágenes cargadas
+  if (numImages >= 6 && numImages <= 9) {
+    collage.innerHTML = "";
+
+    let numRows;
+    let numColumns;
+
+    // Determinar el formato de la grilla según la cantidad de imágenes
+    if (numImages === 6) {
+      numRows = 3;
+      numColumns = 2;
+    } else if (numImages === 7 || numImages === 8 || numImages === 9) {
+      numRows = 3;
+      numColumns = 3;
+    }
+
+    let rowIndex = 0;
+    let columnCount = 0;
+    let row = document.createElement("div");
+    row.classList.add("row");
+
+    for (let i = numImages -1; i > -1; i--) {
+      if (uploadedImages[i].src !== "") {
+        let column = document.createElement("div");
+        column.classList.add("col");
+        let image = document.createElement("img");
+        image.src = uploadedImages[i].src;
+        column.appendChild(image);
+        column.classList.add("image-container");
+
+        let maxWidth;
+        let maxHeight;
+
+        if (i === 0) {
+          // Primera imagen
+          if (numImages === 7) {
+            maxWidth = collageWidth;
+            maxHeight = Math.floor(collageWidth / numColumns * 1.2);
+          } else if (numImages === 8) {
+            maxWidth = Math.floor(collageWidth * 0.66);
+            maxHeight = Math.floor(maxWidth / 1.2);
+          }
+        } else {
+          // Resto de las imágenes
+          maxWidth = Math.floor(collageWidth / numColumns);
+          maxHeight = Math.floor(maxWidth / 1.2);
+        }
+
+        column.style.maxWidth = `${maxWidth}px`;
+        column.style.maxHeight = `${maxHeight}px`;
+
+        row.appendChild(column);
+        columnCount++;
+      }
+
+      if (columnCount === numColumns) {
+        collage.appendChild(row);
+        rowIndex++;
+        row = document.createElement("div");
+        row.classList.add("row");
+        columnCount = 0;
+      }
+    }
+
+    if (columnCount > 0) {
+      collage.appendChild(row);
+    }
+
+    collageImages = Array.from(collage.getElementsByTagName("img"));
+  } else {
+    console.log(
+      "Por favor, carga entre 6 y 9 imágenes antes de generar el collage."
+    );
+  }
+}
+
+
+
+
+
+function dibujarCollage() {
+  var collage = document.getElementById("collageMain");
+  renderCollage();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btnCrear").addEventListener("click", function () {
+    setTimeout(function () {
+      dibujarCollage();
+    }, 300);
+  });
+});
