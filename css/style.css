@@ -2,8 +2,20 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  /* border: black solid 1px; */
 }
-.row{
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+nav {
+  background-color: #0199c8;
+}
+.row {
   padding: 0 !important;
 }
 #footer {
