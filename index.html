@@ -62,9 +62,7 @@
       <article
         class="d-flex justify-content-center align-items-center flex-column"
       >
-        <section class="container text-center" id="seccionResumen">
-         
-        </section>
+        <section class="container text-center" id="seccionResumen"></section>
         <section class="my-4">
           <button id="src-btn" class="btn btn-primary rounded-4">
             <span class="display-1"> CAPTURA DE PANTALLA</span>
@@ -205,93 +203,30 @@
                   </div>
                   <div class="col-md-4">
                     <label
-                      for="areaProgramatica"
+                      for="areaOperativa"
                       class="form-label fw-semibold mt-2"
                       >Area Operativa:</label
                     >
                     <select
                       id="areaOperativa"
                       class="form-select border border-1"
-                      required=""
+                      required="" 
+                      disabled="true"
                     >
-                    <option value="">Seleccione:</option>
-                    <option>TAFI VIEJO</option>
-                    <option>TRANCAS</option>
-                    <option>LULES</option>
-                    <option>ALTA MONTAÑA</option>
-                    <option>SAN PABLO</option>
-                    <option>FAMAILLA</option>
-                    <option>TAFI DEL VALLE</option>
-                    <option>EL CADILLAL</option>
-                    <option>VALLES CALCHAQUIES</option>
-                    <option>ALDERETES</option>
-                    <option>BANDA RIO SALI</option>
-                    <option>BELLA VISTA</option>
-                    <option>BURRUYACU</option>
-                    <option>EL BRACHO</option>
-                    <option>EL TIMBO</option>
-                    <option>ESTACION ARAOZ</option>
-                    <option>GARMENDIA</option>
-                    <option>LA FLORIDA</option>
-                    <option>LA RAMADA</option>
-                    <option>LEALES</option>
-                    <option>LOS RALOS</option>
-                    <option>RANCHILLOS</option>
-                    <option>SANTA ANA</option>
-                    <option>AGUILARES</option>
-                    <option>GRANEROS</option>
-                    <option>CONCEPCION</option>
-                    <option>SIMOCA</option>
-                    <option>ALBERDI</option>
-                    <option>LA MADRID</option>
-                    <option>LA COCHA</option>
-                    <option>MONTEROS</option>
+                      <option value="">Seleccione:</option>
                     </select>
                   </div>
                   <div class="col-md-4">
-                    <label
-                      for="efector"
-                      class="form-label fw-semibold mt-2"
+                    <label for="efector" class="form-label fw-semibold mt-2"
                       >Efector:</label
                     >
                     <select
                       id="efector"
                       class="form-select border border-1"
                       required=""
+                      disabled="true"
                     >
-                    <option value="">Seleccione:</option>
-                    <option>TAFI VIEJO</option>
-                    <option>TRANCAS</option>
-                    <option>LULES</option>
-                    <option>ALTA MONTAÑA</option>
-                    <option>SAN PABLO</option>
-                    <option>FAMAILLA</option>
-                    <option>TAFI DEL VALLE</option>
-                    <option>EL CADILLAL</option>
-                    <option>VALLES CALCHAQUIES</option>
-                    <option>ALDERETES</option>
-                    <option>BANDA RIO SALI</option>
-                    <option>BELLA VISTA</option>
-                    <option>BURRUYACU</option>
-                    <option>EL BRACHO</option>
-                    <option>EL TIMBO</option>
-                    <option>ESTACION ARAOZ</option>
-                    <option>GARMENDIA</option>
-                    <option>LA FLORIDA</option>
-                    <option>LA RAMADA</option>
-                    <option>LEALES</option>
-                    <option>LOS RALOS</option>
-                    <option>RANCHILLOS</option>
-                    <option>SANTA ANA</option>
-                    <option>AGUILARES</option>
-                    <option>GRANEROS</option>
-                    <option>CONCEPCION</option>
-                    <option>SIMOCA</option>
-                    <option>ALBERDI</option>
-                    <option>LA MADRID</option>
-                    <option>LA COCHA</option>
-                    <option>MONTEROS</option>
-                    </select>
+                      <option value="">Seleccione:</option>
                     </select>
                   </div>
                 </aside>
@@ -428,4 +363,5 @@
   <script src="./js/helpers.js" type="module"></script>
   <script src="./js/modalCarga.js" type="module"></script>
   <script src="./js/dibujarCollage.js"></script>
+  <script src="./js/validacionAreasYEfectores.js"></script>
 </html>
