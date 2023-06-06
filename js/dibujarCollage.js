@@ -3,9 +3,10 @@ let realFileBtn = document.getElementById("real-file");
 let customBtn = document.getElementById("custom-button");
 let customTxt = document.getElementById("custom-text");
 let imagePreview = document.getElementById("image-preview");
-let collage = document.getElementById("collage");
 let fileList = [];
 let collageImages = [];
+
+console.log(`  +   +   +   +  +  +  +  +  +  +  +  +`);
 
 customBtn.addEventListener("click", function () {
   realFileBtn.click();

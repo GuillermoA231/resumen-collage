@@ -70,7 +70,7 @@
           </button>
         </section>
       </article>
-      <!-- formulario Resumen collage-->
+      <!-- formulario/Modal Resumen collage-->
       <section
         class="modal fade"
         tabindex="-1"
@@ -83,7 +83,6 @@
             <div class="modal-header">
               <h5 class="modal-title">Ingrese los datos</h5>
               <button
-                id="btnCrear"
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
@@ -186,7 +185,7 @@
                   </div>
                 </aside>
                 <aside class="row mt-2">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <label
                       for="areaProgramatica"
                       class="form-label fw-semibold mt-2"
@@ -204,7 +203,7 @@
                       <option>AREA PROGRAMATICA OESTE</option>
                     </select>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <label
                       for="areaProgramatica"
                       class="form-label fw-semibold mt-2"
@@ -215,38 +214,84 @@
                       class="form-select border border-1"
                       required=""
                     >
-                      <option value="">Seleccione:</option>
-                      <option>AREA OPERATIVA TAFI VIEJO</option>
-                      <option>AREA OPERATIVA TRANCAS</option>
-                      <option>AREA OPERATIVA LULES</option>
-                      <option>AREA OPERATIVA ALTA MONTAÑA</option>
-                      <option>AREA OPERATIVA SAN PABLO</option>
-                      <option>AREA OPERATIVA FAMAILLA</option>
-                      <option>AREA OPERATIVA TAFI DEL VALLE</option>
-                      <option>AREA OPERATIVA EL CADILLAL</option>
-                      <option>AREA OPERATIVA VALLES CALCHAQUIES</option>
-                      <option>AREA OPERATIVA ALDERETES</option>
-                      <option>AREA OPERATIVA BANDA RIO SALI</option>
-                      <option>AREA OPERATIVA BELLA VISTA</option>
-                      <option>AREA OPERATIVA BURRUYACU</option>
-                      <option>AREA OPERATIVA EL BRACHO</option>
-                      <option>AREA OPERATIVA EL TIMBO</option>
-                      <option>AREA OPERATIVA ESTACION ARAOZ</option>
-                      <option>AREA OPERATIVA GARMENDIA</option>
-                      <option>AREA OPERATIVA LA FLORIDA</option>
-                      <option>AREA OPERATIVA LA RAMADA</option>
-                      <option>AREA OPERATIVA LEALES</option>
-                      <option>AREA OPERATIVA LOS RALOS</option>
-                      <option>AREA OPERATIVA RANCHILLOS</option>
-                      <option>AREA OPERATIVA SANTA ANA</option>
-                      <option>AREA OPERATIVA AGUILARES</option>
-                      <option>AREA OPERATIVA GRANEROS</option>
-                      <option>AREA OPERATIVA CONCEPCION</option>
-                      <option>AREA OPERATIVA SIMOCA</option>
-                      <option>AREA OPERATIVA ALBERDI</option>
-                      <option>AREA OPERATIVA LA MADRID</option>
-                      <option>AREA OPERATIVA LA COCHA</option>
-                      <option>AREA OPERATIVA MONTEROS</option>
+                    <option value="">Seleccione:</option>
+                    <option>TAFI VIEJO</option>
+                    <option>TRANCAS</option>
+                    <option>LULES</option>
+                    <option>ALTA MONTAÑA</option>
+                    <option>SAN PABLO</option>
+                    <option>FAMAILLA</option>
+                    <option>TAFI DEL VALLE</option>
+                    <option>EL CADILLAL</option>
+                    <option>VALLES CALCHAQUIES</option>
+                    <option>ALDERETES</option>
+                    <option>BANDA RIO SALI</option>
+                    <option>BELLA VISTA</option>
+                    <option>BURRUYACU</option>
+                    <option>EL BRACHO</option>
+                    <option>EL TIMBO</option>
+                    <option>ESTACION ARAOZ</option>
+                    <option>GARMENDIA</option>
+                    <option>LA FLORIDA</option>
+                    <option>LA RAMADA</option>
+                    <option>LEALES</option>
+                    <option>LOS RALOS</option>
+                    <option>RANCHILLOS</option>
+                    <option>SANTA ANA</option>
+                    <option>AGUILARES</option>
+                    <option>GRANEROS</option>
+                    <option>CONCEPCION</option>
+                    <option>SIMOCA</option>
+                    <option>ALBERDI</option>
+                    <option>LA MADRID</option>
+                    <option>LA COCHA</option>
+                    <option>MONTEROS</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label
+                      for="efector"
+                      class="form-label fw-semibold mt-2"
+                      >Efector:</label
+                    >
+                    <select
+                      id="efector"
+                      class="form-select border border-1"
+                      required=""
+                    >
+                    <option value="">Seleccione:</option>
+                    <option>TAFI VIEJO</option>
+                    <option>TRANCAS</option>
+                    <option>LULES</option>
+                    <option>ALTA MONTAÑA</option>
+                    <option>SAN PABLO</option>
+                    <option>FAMAILLA</option>
+                    <option>TAFI DEL VALLE</option>
+                    <option>EL CADILLAL</option>
+                    <option>VALLES CALCHAQUIES</option>
+                    <option>ALDERETES</option>
+                    <option>BANDA RIO SALI</option>
+                    <option>BELLA VISTA</option>
+                    <option>BURRUYACU</option>
+                    <option>EL BRACHO</option>
+                    <option>EL TIMBO</option>
+                    <option>ESTACION ARAOZ</option>
+                    <option>GARMENDIA</option>
+                    <option>LA FLORIDA</option>
+                    <option>LA RAMADA</option>
+                    <option>LEALES</option>
+                    <option>LOS RALOS</option>
+                    <option>RANCHILLOS</option>
+                    <option>SANTA ANA</option>
+                    <option>AGUILARES</option>
+                    <option>GRANEROS</option>
+                    <option>CONCEPCION</option>
+                    <option>SIMOCA</option>
+                    <option>ALBERDI</option>
+                    <option>LA MADRID</option>
+                    <option>LA COCHA</option>
+                    <option>MONTEROS</option>
+                    </select>
                     </select>
                   </div>
                 </aside>
@@ -302,6 +347,14 @@
                     id="btnCrear"
                   >
                     Enviar
+                  </button>
+                  <button
+                    class="btn btn-outline-primary mt-3 text-end"
+                    type="button"
+                    id="btnGenerarImagenes"
+                    onclick="dibujarCollage()"
+                  >
+                    Generar imagenes
                   </button>
                 </div>
               </form>
