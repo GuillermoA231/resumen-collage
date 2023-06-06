@@ -162,7 +162,7 @@ function renderCollage() {
         } else {
           // Resto de las imágenes
           maxWidth = Math.floor(collageWidth / numColumns);
-          maxHeight = Math.floor(maxWidth / 1.2);
+          maxHeight = Math.floor(maxWidth * 1.5);
         }
 
         column.style.maxWidth = `${maxWidth}px`;
