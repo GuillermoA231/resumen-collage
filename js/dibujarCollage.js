@@ -50,77 +50,6 @@ function renderCollage() {
   if (numImages >= 6 && numImages <= 9) {
     collage.innerHTML = "";
 
-    let numRows = Math.ceil(numImages / 3);
-    let numColumns = 3;
-
-    let rowIndex = 0;
-    let columnCount = 0;
-    let row = document.createElement("div");
-    row.classList.add("row");
-
-    for (let i = numImages - 1; i >= 0; i--) {
-      // Verificar si hay una imagen disponible para esa posición
-      if (uploadedImages[i].src !== "") {
-        let column = document.createElement("div");
-        column.classList.add("col");
-        let image = document.createElement("img");
-        image.src = uploadedImages[i].src;
-        column.appendChild(image);
-        column.classList.add("image-container");
-
-        let maxWidth;
-        let maxHeight;
-
-        if (numImages === 7 && rowIndex === numRows - 1) {
-          // Última fila con una sola imagen
-          maxWidth = collageWidth;
-          maxHeight = Math.floor(collageWidth / numColumns * 1.2);
-        } else {
-          maxWidth = collageWidth / numColumns;
-          maxHeight = Math.floor(maxWidth / 1.2);
-        }
-
-        column.style.maxWidth = `${maxWidth}px`;
-        column.style.maxHeight = `${maxHeight}px`;
-
-        row.appendChild(column);
-        columnCount++;
-
-        if (columnCount === numColumns) {
-          row.classList.add("justify-content-end"); // Alinea las imágenes a la derecha
-          collage.appendChild(row);
-          rowIndex++;
-          row = document.createElement("div");
-          row.classList.add("row");
-          columnCount = 0;
-        }
-      }
-    }
-
-    if (columnCount > 0) {
-      row.classList.add("justify-content-end"); // Alinea las imágenes a la derecha
-      collage.appendChild(row);
-    }
-
-    collageImages = Array.from(collage.getElementsByTagName("img"));
-  } else {
-    console.log(
-      "Por favor, carga entre 6 y 9 imágenes antes de generar el collage."
-    );
-  }
-}
-
-
-function renderCollage() {
-  let uploadedImages = imagePreview.getElementsByTagName("img");
-  let collageWidth = 1200; // ancho del div collage
-
-  let numImages = uploadedImages.length;
-
-  // Verificar la cantidad de imágenes cargadas
-  if (numImages >= 6 && numImages <= 9) {
-    collage.innerHTML = "";
-
     let numRows;
     let numColumns;
 
@@ -192,14 +121,46 @@ function renderCollage() {
     );
   }
 }
+function intercambiarFilas() {
+  var collageDiv = document.getElementById("collage");
+  var rows = collageDiv.getElementsByClassName("row");
 
+  if (rows.length >= 3) {
+    var thirdRow = rows[2];
+    var firstRow = rows[0];
 
+    collage.insertBefore(thirdRow, firstRow);
+    var secondRow = rows[1];
+    collage.insertBefore(firstRow, secondRow.nextSibling);
+    
+    intercambiarImagenes(thirdRow);
+  }
+}
 
+function intercambiarImagenes(row) {
+  var columns = row.getElementsByClassName("col");
 
+  if (columns.length >= 3) {
+    var thirdColumn = columns[2];
+    var firstColumn = columns[0];
+
+    row.insertBefore(thirdColumn, firstColumn);
+
+    var images = thirdColumn.getElementsByTagName("img");
+    if (images.length >= 2) {
+      var secondImage = images[1];
+      thirdColumn.insertBefore(secondImage, images[0]);
+    }
+  }
+}
 
 function dibujarCollage() {
   var collage = document.getElementById("collageMain");
   renderCollage();
+ 
+  setTimeout(function () {
+    intercambiarFilas();
+  }, 0);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
