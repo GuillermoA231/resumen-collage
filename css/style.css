@@ -2,8 +2,22 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  /* border: black solid 1px; */
 }
-
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+nav {
+  background-color: #0199c8;
+}
+.row {
+  padding: 0 !important;
+}
 #footer {
   height: 100%;
 }
@@ -21,33 +35,37 @@
   height: 180px;
   object-fit: cover;
 }
-#collage {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
+#collage .col-12 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  #collage .col-12 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #collage .image-container {
-    padding: 2px !important;
-  }
-  
-  #collage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    padding: 0px !important;
-    border-radius: 3%;
-    filter: contrast(120%) !important;
-  }
-  
-  .image-2x2 {
-    flex-basis: calc(28.33% - 10px) !important;
-  }
-  
+#collage .image-container {
+  padding: 2px !important;
+}
+
+#collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 0px !important;
+  border-radius: 3%;
+  filter: contrast(120%) !important;
+}
+
+.image-1x2 {
+  flex-basis: calc(66.66% - 10px) !important;
+  height: 100%; /* Added height property to fill the parent container */
+}
+
+.image-full {
+  flex-basis: 100% !important;
+  height: 100%; /* Added height property to fill the parent container */
+}
+
+.image-1x3 {
+  max-width: 100% !important;
+  height: 100%; /* Added height property to fill the parent container */
+}
