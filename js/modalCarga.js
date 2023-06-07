@@ -44,10 +44,10 @@ function generarContenido(resumen) {
         ${resumen.fecha}
       </div>
       <div class="row" id="header">
-        <div class="bg-danger">
+        <div>
           <img src="./img/categoria.png" class="img-fluid" alt="Imagen 1" />
         </div>
-        <div class="col-4 bg-primary d-flex justify-content-center align-items-center"></div>
+        <div class="col-4 d-flex justify-content-center align-items-center"></div>
       </div>
       <div class="row h2">
         <div>${resumen.categoria}</div>
@@ -55,8 +55,8 @@ function generarContenido(resumen) {
         <div>${resumen.efector}</div>
       </div>
       <div class="row">
-        <div class="col-12 bg-info h4 m-0 p-3" id="title">
-          Descripcion Resumen: ${resumen.descripcion}
+        <div class="col-12 h4 m-0 p-3" id="title">
+         ${resumen.descripcion}
         </div>
       </div>
       <div class="row" id="collage">
