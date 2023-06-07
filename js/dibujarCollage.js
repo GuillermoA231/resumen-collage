@@ -9,44 +9,14 @@ let collageImages = [];
 console.log(`  +   +   +   +  +  +  +  +  +  +  +  +`);
 
 customBtn.addEventListener("click", function () {
-  if (isMobileDevice()) {
-    selectFromMobileGallery();
-  } else {
-    realFileBtn.click();
-  }
+  realFileBtn.click();
 });
 
 realFileBtn.addEventListener("change", cargarImagenes);
 
-function isMobileDevice() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
-}
-
-async function selectFromMobileGallery() {
-  try {
-    const [fileHandle] = await window.showOpenFilePicker({
-      types: [
-        {
-          description: "Images",
-          accept: {
-            "image/*": [".png", ".gif", ".jpeg", ".jpg"],
-          },
-        },
-      ],
-    });
-    const file = await fileHandle.getFile();
-    const fileList = [file];
-    cargarImagenes(fileList);
-  } catch (error) {
-    console.error("Error al seleccionar archivos:", error);
-  }
-}
-
-function cargarImagenes(files) {
-  if (files && files.length > 0) {
-    fileList = Array.from(files);
+function cargarImagenes() {
+  if (realFileBtn.files && realFileBtn.files.length > 0) {
+    fileList = Array.from(realFileBtn.files);
     customTxt.innerHTML = `${fileList.length} archivo(s) seleccionado(s)`;
     imagePreview.innerHTML = "";
 
@@ -69,7 +39,6 @@ function cargarImagenes(files) {
     collage.innerHTML = "";
   }
 }
-
 
 function renderCollage() {
   let uploadedImages = imagePreview.getElementsByTagName("img");
