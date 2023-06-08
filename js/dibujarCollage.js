@@ -74,31 +74,31 @@ function renderCollage() {
         column.appendChild(image);
         column.classList.add("image-container");
 
-        let maxWidth;
-        let maxHeight;
+        let maxWidthSize;
+        let maxHeightSize;
 
         if (i === 0) {
           // Primera imagen
           if (numImages === 7) {
-            maxWidth = collageWidth;
-            maxHeight = Math.floor(collageWidth * numColumns / 3.2);
+            maxWidthSize = collageWidth;
+            maxHeightSize = Math.floor(collageWidth * numColumns / 6.2);
           } else if (numImages === 8) {
-            maxWidth = Math.floor(collageWidth * 0.66);
-            maxHeight = Math.floor(maxWidth / 1.8);
+            maxWidthSize = Math.floor(collageWidth * 0.66);
+            maxHeightSize = Math.floor(maxWidthSize / 1.8);
           }
         } else {
           // Resto de las imágenes
-          maxWidth = Math.floor(collageWidth / numColumns);
-          maxHeight = Math.floor(maxWidth / 1.3);
+          maxWidthSize = Math.floor(collageWidth / numColumns);
+          maxHeightSize = Math.floor(maxWidthSize / 1.3);
         }
-        let width = maxWidth * 0.9;
-        let height = maxHeight * 0.9;
+        let widthSize = maxWidthSize * 0.9;
+        let heightSize = maxHeightSize * 0.9;
         
-        column.style.maxWidth = `${maxWidth}px`;
-        column.style.maxHeight = `${maxHeight}px`;
+        column.style.width += `${widthSize}px`;
+        column.style.height += `${heightSize}px`;
 
-        column.style.width = `${width}px`;
-        column.style.height = `${height}px`;
+        column.style.maxWidth += `${maxWidthSize}px`;
+        column.style.maxHeight += `${maxHeightSize}px`;
 
         row.appendChild(column);
         columnCount++;
