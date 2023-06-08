@@ -83,19 +83,24 @@ function renderCollage() {
           // Primera imagen
           if (numImages === 7) {
             maxWidth = collageWidth;
-            maxHeight = Math.floor(collageWidth / numColumns * 1.2);
+            maxHeight = Math.floor(collageWidth * numColumns / 3.2);
           } else if (numImages === 8) {
             maxWidth = Math.floor(collageWidth * 0.66);
-            maxHeight = Math.floor(maxWidth / 1.2);
+            maxHeight = Math.floor(maxWidth / 1.8);
           }
         } else {
           // Resto de las imágenes
           maxWidth = Math.floor(collageWidth / numColumns);
           maxHeight = Math.floor(maxWidth * 1.5);
         }
-
+        let width = maxWidth * 0.9;
+        let height = maxHeight * 0.9;
+        
         column.style.maxWidth = `${maxWidth}px`;
         column.style.maxHeight = `${maxHeight}px`;
+
+        column.style.width = `${width}px`;
+        column.style.height = `${height}px`;
 
         row.appendChild(column);
         columnCount++;
