@@ -37,48 +37,51 @@ function prepararFormularioResumen(e) {
 
 function generarContenido(resumen) {
   let seccion = document.querySelector("#seccionResumen");
-  console.log(resumen.fecha + " funca?");
+  // Obtener el nombre de la imagen según la categoría seleccionada
+  let imagenNombre = resumen.categoria.replace(/\s+/g, '');
+
   seccion.innerHTML = `
-  <article id="mainDiv">
-  <div class="row d-flex align-items-center justify-content-center fw-bold display-5">
+    <article id="mainDiv" class="h-100 resumen-container">
+      <div class="row d-flex align-items-center justify-content-center fw-bold display-5 fecha-container">
         ${resumen.fecha}
       </div>
       <div class="row" id="header">
-        <div>
-          <img src="./img/categoria.png" class="img-fluid" alt="Imagen 1" />
+        <div class="banner-container">
+          <img src="./img/banners/${imagenNombre}.jpg" alt="Imagen 1" />
         </div>
         <div class="col-4 d-flex justify-content-center align-items-center"></div>
       </div>
-      <div class="row h2">
+      <div class="row h2 py-5 fecha-container">
         <div>${resumen.categoria}</div>
         <div>${resumen.titulo}</div>
         <div>${resumen.efector}</div>
       </div>
-      <div class="row">
+      <div class="row py-5  fecha-container">
         <div class="col-12 h4 m-0 p-3" id="title">
-         ${resumen.descripcion}
+          ${resumen.descripcion}
         </div>
       </div>
-      <div class="row" id="collage">
+      <div class="row" id="collage"class="collage-container">
         <div class="col-12" id="collageMain">
         </div>
       </div>
       <div class="row d-flex justify-content-center align-items-center p-0 m-0" id="footer">
-                <div class="col-4 rounded text-center justify-content-center flex-wrap flex-grow-1 align-items-center">
-                  <h2>AREA OPERATIVA</h2>
-                  <h2><strong>${resumen.areaOperativa}</strong></h2>
-                </div>
-                <div class="col-8">
-                  <img
-                    id="logo"
-                    class="img-thumbnail"
-                    src="./img/logoMSP.png"
-                    alt="Logo Banner"
-                    srcset=""
-                    class="rounded"
-                  />
-                </div>
-              </div>
-            </article>
+        <div class="col-4 rounded text-center justify-content-center flex-wrap flex-grow-1 align-items-center">
+          <h2>AREA OPERATIVA</h2>
+          <h2><strong>${resumen.areaOperativa}</strong></h2>
+        </div>
+        <div class="col-8">
+          <img
+            id="logo"
+            class="img-thumbnail"
+            src="./img/logoMSP.png"
+            alt="Logo Banner"
+            srcset=""
+            class="rounded"
+          />
+        </div>
+      </div>
+    </article>
   `;
 }
+
