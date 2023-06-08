@@ -6,8 +6,6 @@ let imagePreview = document.getElementById("image-preview");
 let fileList = [];
 let collageImages = [];
 
-console.log(`  +   +   +   +  +  +  +  +  +  +  +  +`);
-
 customBtn.addEventListener("click", function () {
   realFileBtn.click();
 });
@@ -42,7 +40,7 @@ function cargarImagenes() {
 
 function renderCollage() {
   let uploadedImages = imagePreview.getElementsByTagName("img");
-  let collageWidth = 1200; // ancho del div collage
+  let collageWidth = 1800;// ancho del div collage
 
   let numImages = uploadedImages.length;
 
@@ -83,19 +81,24 @@ function renderCollage() {
           // Primera imagen
           if (numImages === 7) {
             maxWidth = collageWidth;
-            maxHeight = Math.floor(collageWidth / numColumns * 1.2);
+            maxHeight = Math.floor(collageWidth * numColumns / 3.2);
           } else if (numImages === 8) {
             maxWidth = Math.floor(collageWidth * 0.66);
-            maxHeight = Math.floor(maxWidth / 1.2);
+            maxHeight = Math.floor(maxWidth / 1.8);
           }
         } else {
           // Resto de las imágenes
           maxWidth = Math.floor(collageWidth / numColumns);
-          maxHeight = Math.floor(maxWidth * 1.5);
+          maxHeight = Math.floor(maxWidth / 1.3);
         }
-
+        let width = maxWidth * 0.9;
+        let height = maxHeight * 0.9;
+        
         column.style.maxWidth = `${maxWidth}px`;
         column.style.maxHeight = `${maxHeight}px`;
+
+        column.style.width = `${width}px`;
+        column.style.height = `${height}px`;
 
         row.appendChild(column);
         columnCount++;
@@ -120,6 +123,7 @@ function renderCollage() {
       "Por favor, carga entre 6 y 9 imágenes antes de generar el collage."
     );
   }
+  
 }
 function intercambiarFilas() {
   var collageDiv = document.getElementById("collage");
@@ -156,6 +160,7 @@ function intercambiarImagenes(row) {
 
 function dibujarCollage() {
   var collage = document.getElementById("collageMain");
+
   renderCollage();
  
   setTimeout(function () {
