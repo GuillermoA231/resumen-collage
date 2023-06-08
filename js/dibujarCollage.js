@@ -84,7 +84,7 @@ function renderCollage() {
             maxHeightSize = Math.floor(collageWidth * numColumns / 6.2);
           } else if (numImages === 8) {
             maxWidthSize = Math.floor(collageWidth * 0.66);
-            maxHeightSize = Math.floor(maxWidthSize / 1.8);
+            maxHeightSize = Math.floor(maxWidthSize / 2.53);
           }
         } else {
           // Resto de las imágenes
@@ -94,11 +94,11 @@ function renderCollage() {
         let widthSize = maxWidthSize * 0.9;
         let heightSize = maxHeightSize * 0.9;
         
-        column.style.width += `${widthSize}px`;
-        column.style.height += `${heightSize}px`;
+        column.style.width = `${widthSize}px`;
+        column.style.height = `${heightSize}px`;
 
-        column.style.maxWidth += `${maxWidthSize}px`;
-        column.style.maxHeight += `${maxHeightSize}px`;
+        column.style.maxWidth = `${maxWidthSize}px`;
+        column.style.maxHeight = `${maxHeightSize}px`;
 
         row.appendChild(column);
         columnCount++;
