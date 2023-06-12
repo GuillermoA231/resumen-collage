@@ -52,13 +52,13 @@ function generarContenido(resumen) {
         <div class="col-4 d-flex justify-content-center align-items-center"></div>
       </div>
       <div class="row h2 py-5 fecha-container">
-        <div>${resumen.categoria}</div>
-        <div>${resumen.titulo}</div>
-        <div>${resumen.efector}</div>
+        <p class="display-4">${resumen.categoria}</p>
+        <p class="display-4">${resumen.titulo}</p>
+        <p class="display-4">${resumen.efector}</p>
       </div>
       <div class="row py-5  fecha-container">
         <div class="col-12 h4 m-0 p-3" id="title">
-          ${resumen.descripcion}
+          <p class="display-5">${resumen.descripcion}</p>
         </div>
       </div>
       <div class="row" id="collage"class="collage-container">
