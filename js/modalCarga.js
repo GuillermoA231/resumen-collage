@@ -41,6 +41,11 @@ function generarContenido(resumen) {
   let imagenNombre = resumen.categoria.replace(/\s+/g, '');
 
   seccion.innerHTML = `
+  <section class="my-4 text-center">
+    <button id="src-btn" class="btn btn-primary rounded-4">
+      <span class="display-1"> DESCARGAR RESUMEN</span>
+    </button>
+  </section>
     <article id="mainDiv" class="h-100 resumen-container">
       <div class="row d-flex align-items-center justify-content-center fw-bold display-5 fecha-container">
         ${resumen.fecha}
@@ -67,8 +72,8 @@ function generarContenido(resumen) {
       </div>
       <div class="row d-flex justify-content-center align-items-center p-0 m-0" id="footer">
         <div class="col-4 rounded text-center justify-content-center flex-wrap flex-grow-1 align-items-center">
-          <h2>AREA OPERATIVA</h2>
-          <h2><strong>${resumen.areaOperativa}</strong></h2>
+        <strong><h2>AREA OPERATIVA</h2>
+          <h2>${resumen.areaOperativa}</h2></strong>
         </div>
         <div class="col-8">
           <img

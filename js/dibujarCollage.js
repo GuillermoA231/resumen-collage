@@ -15,6 +15,12 @@ realFileBtn.addEventListener("change", cargarImagenes);
 function cargarImagenes() {
   if (realFileBtn.files && realFileBtn.files.length > 0) {
     fileList = Array.from(realFileBtn.files);
+
+    if (fileList.length < 6 || fileList.length > 9) {
+      alert("Por favor, carga entre 6 y 9 imágenes.");
+      return;
+    }
+
     customTxt.innerHTML = `${fileList.length} archivo(s) seleccionado(s)`;
     imagePreview.innerHTML = "";
 
@@ -37,6 +43,7 @@ function cargarImagenes() {
     collage.innerHTML = "";
   }
 }
+
 
 function renderCollage() {
   let uploadedImages = imagePreview.getElementsByTagName("img");

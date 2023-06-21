@@ -86,11 +86,6 @@
           Agregar el resumen <i class="bi bi-plus-square"></i>
         </button>
       </section>
-      <section class="my-4 text-center">
-        <button id="src-btn" class="btn btn-primary rounded-4">
-          <span class="display-1"> CAPTURA DE PANTALLA</span>
-        </button>
-      </section>
       <!--Maquetado Resumen-->
 
       <article
@@ -197,7 +192,7 @@
 
                   <div class="col-md-6">
                     <label for="categoria" class="form-label fw-semibold mt-2"
-                      >Categoria:</label
+                      >Seleccione Su Actividad:</label
                     >
                     <select
                       id="categoria"
@@ -267,11 +262,11 @@
                 </aside>
                 <div class="container-titulo">
                   <label for="titulo" class="form-label fw-semibold mt-2"
-                    >Titulo:</label
+                    >Titulo de la Actividad Realizada:</label
                   >
                   <textarea
                     id="titulo"
-                    placeholder="Escriba aqui el titulo del resumen"
+                    placeholder="Escriba aqui el titulo de la actividad"
                     rows="1"
                     minlength="10"
                     maxlength="50"
@@ -282,12 +277,12 @@
                 </div>
                 <div class="container-descripcion">
                   <label for="descripcion" class="form-label fw-semibold mt-2"
-                    >Descripción:</label
+                    >Objetivos y Participantes:</label
                   >
                   <textarea
                     id="descripcion"
                     rows="4"
-                    placeholder="Escriba aqui la descripcion del resumen."
+                    placeholder="Escriba una breve descripción de la actividad realizada"
                     minlength="10"
                     maxlength="250"
                     required=""
@@ -298,7 +293,7 @@
                 <div class="container-imagenes">
                   <input type="file" id="real-file" hidden="hidden" multiple />
                   <button type="button" id="custom-button">
-                    Elige archivos
+                    Ingresar Imagenes
                   </button>
                   <span id="custom-text">No archivos seleccionados</span>
                   <div
@@ -318,7 +313,7 @@
                     type="submit"
                     id="btnCrear"
                   >
-                    Enviar
+                    Ingresar datos del Formulario
                   </button>
                   <button
                     class="btn btn-outline-primary mt-3 text-end"
@@ -336,19 +331,15 @@
         </div>
       </section>
     </main>
-    <footer
-      class=""
-    >
-      <div class="col m-0">
-        <a
-          href="/"
-          class="d-flex align-items-center mb-3 link-dark text-decoration-none"
-        >
-          <svg class="bi" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-        </a>
-        <p class="text-muted">© 2022</p>
+    <footer class="bg-light py-4">
+      <div class="container text-center">
+        <p class="mb-0">
+          &copy; Ministerio de Salud Pública de Tucumán. Todos los derechos reservados 2023
+          <br>
+          Creador:  <a href="https://www.linkedin.com/in/joaqu%C3%ADn-guillermo-andrada-9b892121a/" target="_blank">Andrada Joaquin Guillermo</a>
+          <br>
+          Github: <a href="https://github.com/GuillermoA231" target="_blank">github.com/GuillermoA231</a>
+        </p>
       </div>
     </footer>
   </body>

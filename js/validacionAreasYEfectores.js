@@ -440,99 +440,84 @@ const areasProgramaticas = [
     "nombre": "AREA PROGRAMATICA CENTRO",
     "areasOperativas": [
       {
-        "nombre": "MEJICO 709",
+        "nombre": "AREA OPERATIVA MARIANO MORENO",
         "efectores": [
-          "AV. F. AGUIRRE Y AV. DEL LIBANO",
-          "CALLE 25 y 20 - Bº PABLO VI",
-          "CALLE 4 ESQUINA 9 - V. M. MORENO",
-          "BALCARCE 3150 - LAS TALITAS",
-          "AV. F. SOLANO 300 - Bº SOEME",
-          "RUTA 305-Km 12,5 EX GRANJA MODELO - V.M.MORENO",
-          "AVDA RIOS 500",
-          "V. M. MORENO CALLE 35 (entre 12 y 14)",
-          "V. M. MORENO CALLE 75 (entre 10 y 12)",
-          "MEXICO 1100"
+          "CAPS CANAL NORTE",
+          "CAPS PABLO VI",
+          "POLICLÍNICA VILLA M. MORENO",
+          "CAPS LAS TALITAS",
+          "CAPS SAN FRANCISCO SOLANO (SOEME)",
+          "CAPS VICENTE TRAPANI",
+          "CIC 156 VIVIENDAS",
+          "CAM PQUE INDEPENDENCIA - 17 DE AGOSTO",
+          "CAM GRAFICO II",
+          "PENAL DE VILLA URQUIZA"
         ]
       },
       {
-        "nombre": "ESPAÑA 611",
+        "nombre": "AREA OPERATIVA NORESTE",
         "efectores": [
-          "RAMON Y CAJAL 102",
-          "AV. JUAN B. JUSTO 1577",
-          "MAIPU 1954",
-          "URUGUAY 696",
-          "MARTIN BERHO 1060",
-          "AV. CORONEL SUAREZ 650",
-          "COSTANERA Y HAITI 1100",
-          "MZ 7 CASA 19 BARRIO 130 VIVIENDAS"
+          "POLICLÍNICA GINÉS GONZÁLEZ GARCÍA",
+          "CAPS VILLA 9 DE JULIO",
+          "CAPS 25 DE MAYO",
+          "CAPS URQUIZA I",
+          "CAPS. DR. CARLOS R. CATTANEO",
+          "CAPS ANTARTIDA ARGENTINA",
+          "CAPS COSTANERA NORTE",
+          "CAPS MARIA BEATRIZ CURUBETO"
         ]
       },
       {
-        "nombre": "ITALIA 764",
+        "nombre": "AREA OPERATIVA NOROESTE",
         "efectores": [
-          "SARGENTO CABRAL 2465",
-          "PADRE R CORREA 2400",
-          "ASUNCION 903",
-          "PJE. S/N ALTURA FELIX OLAZABAL 1500",
-          "FRANCISCO DE AGUIREE 3070",
-          "SAN MIGUEL 1700",
-          "AZCUENAGA 1070",
-          "MARCOS PAZ 3.255",
-          "CHILE1950",
-          "SARGENTO CABRAL 91",
-          "AV. EJERCITO DEL NORTE Y DELFIN GALLO"
+          "POLICLÍNICA SAN RAFAEL",
+          "CAPS VILLA MUÑECAS",
+          "CAPS EL BOSQUE",
+          "CAPS PRESIDENTE PERÓN",
+          "CAPS SANTA ROSA DE LIMA",
+          "CAPS EVA DUARTE DE PERON",
+          "CAPS BARRIO JARDIN",
+          "CAPS MARCOS PAZ",
+          "CAPS MARIA AUXILIADORA",
+          "CAPS VILLA LUJAN",
+          "CAPS REPUBLICA DE ITALIA"
         ]
       },
       {
-        "nombre": "GENERAL PAZ 54",
+        "nombre": "AREA OPERATIVA SUDESTE",
         "efectores": [
-          "LUIS AGOTE 441",
-          "GENERAL PAZ 54",
-          "CONGRESO 1205",
-          "JUJUY 4500",
-          "LAS HERAS 2500",
-          "PJE. DIAZ VELEZ 1600",
-          "Mz.E-LOTE 7 - Bº JUAN PABLO I",
-          "PJE. LA MADRID Y CHACABUCO",
-          "RUTA Nº 157 km 10 - LOS AGUIRRES",
-          "CHARCAS 1298",
-          "PJE. OBISPO TREJO Y SANABRIA 900 (ESQ.INMIGRANTES ARABES)",
-          "MARCELO T de Aalvear 1988",
-          "PJE. EINSTEN 100"
+          "POLICLÍNICA SAN CAYETANO",
+          "CAPS TTE MATIENZO",
+          "CAPS VILLA ALEM",
+          "CIC SAN FELIPE",
+          "CAPS V. AMALIA",
+          "CAPS BIENESTAR",
+          "CAPS JUAN PABLO I",
+          "POLICLÍNICA DRA. DELIA FERNÁNDEZ PALMA",
+          "CAPS LOS AGUIRRES",
+          "CAPS SAN MIGUEL",
+          "CAPS BARRIO SARMIENTO",
+          "CAPS DIEGO DE VILLARROEL",
+          "CAPS EL SALVADOR"
         ]
-      },
+      },      
       {
-        "nombre": "ESPAÑA 611",
+        "nombre": "AREA OPERATIVA YERBA BUENA",
         "efectores": [
-          "MAGALLANES 2087",
-          "SAN LUIS 1700",
-          "AV. ADOLFO DE LA VEGA 500",
-          "LAMADRID 2786",
-          "CORONEL ZELAYA 970",
-          "FLORIDA ESQ. GORRITI 1100 - Mz. A-PB - Bº MUNICIPAL",
-          "LINCOLN 1500",
-          "LIBERTAD 2690",
-          "LAVALLE 1702",
-          "CONSTITUCION Y MALABIA - Bº EJ. ARGENTINO",
-          "BENIGNO VALLEJOS Y PEDRO LEON GALLO - B° VIAL III MZ F LO",
-          "DIAGONAL HEREDIA y camino a San Pablo",
-          "ALSINA 4735 - Bº SAN MARTIN",
-          "25 DE MAYO 157",
-          "AVDA SOLANO VERA 2DA CUADRA",
-          "LAS ACACIAS Y SALAS Y VALDEZ",
-          "CORDOBA Y DARWIN - Bº LOS PINOS",
-          "AV. SOLANO VERA 2500",
-          "RUTA 339-FINCA DE LA UNT CAMINO ESCUELA DE AGRICULTURA.",
-          "Ruta Nº 340 Calle Nº1 - SAN JAVIER",
-          "Valle de San Javier y La Sala. Club Juventud Unida- Ruta 340 km15",
-          "INDEPENDENCIA Y MAIPU",
-          "AV. FONZALATO GARCIA Y FRIAS SILVA - Bº AVELLANEDA",
-          "Mz. 25 L. 15 - Bº ISLAS MALVINAS",
-          "JORGE L. BORGES Y LOS ALAMOS - VILLA CARMELA",
-          "MENDOZA 2da CUADRA - Y.B.",
-          "LIBANO Y CALLE 3 BARRIO NICOLAS IV - Y.B."
+          "CAPS YERBA BUENA",
+          "CAPS LOS PINOS",
+          "CAPS LA RINCONADA",
+          "CAPS HORCO MOLLE",
+          "CIC SAN JAVIER (CESAR PEPA)",
+          "CAPS DOMINGA GUERRERO (LA SALA)",
+          "POLICLINICA SAN JOSE",
+          "CAPS SANTA CLARA",
+          "CAPS ISLAS MALVINAS",
+          "CAPS VILLA CARMELA",
+          "POLICLÍNICA RAMON CARRILLO",
+          "CTRO DIVINA MISERICORDIA (convenio Iglesia y Siprosa)"
         ]
-      }
+      }      
     ]
   }  
 ];
