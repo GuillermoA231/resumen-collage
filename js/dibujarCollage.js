@@ -47,7 +47,7 @@ function cargarImagenes() {
 
 function renderCollage() {
   let uploadedImages = imagePreview.getElementsByTagName("img");
-  let collageWidth = 1800;// ancho del div collage
+  let collageWidth = 1600;// ancho del div collage
 
   let numImages = uploadedImages.length;
 

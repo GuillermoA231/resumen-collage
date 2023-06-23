@@ -42,9 +42,6 @@ function generarContenido(resumen) {
 
   seccion.innerHTML = `
   <section class="my-4 text-center">
-    <button id="src-btn" class="btn btn-primary rounded-4">
-      <span class="display-1"> DESCARGAR RESUMEN</span>
-    </button>
   </section>
     <article id="mainDiv" class="h-100 resumen-container">
       <div class="row d-flex align-items-center justify-content-center fw-bold display-5 fecha-container">
@@ -57,9 +54,9 @@ function generarContenido(resumen) {
         <div class="col-4 d-flex justify-content-center align-items-center"></div>
       </div>
       <div class="row h2 py-5 fecha-container">
-        <p class="display-4">${resumen.categoria}</p>
-        <p class="display-4">${resumen.titulo}</p>
-        <p class="display-4">${resumen.efector}</p>
+        <strong>${resumen.categoria}</strong>
+        <strong>${resumen.titulo}</strong>
+        <strong>${resumen.efector}</strong>
       </div>
       <div class="row py-5  fecha-container">
         <div class="col-12 h4 m-0 p-3" id="title">
@@ -72,8 +69,8 @@ function generarContenido(resumen) {
       </div>
       <div class="row d-flex justify-content-center align-items-center p-0 m-0" id="footer">
         <div class="col-4 rounded text-center justify-content-center flex-wrap flex-grow-1 align-items-center">
-        <strong><h2>AREA OPERATIVA</h2>
-          <h2>${resumen.areaOperativa}</h2></strong>
+        <strong><h2>AREA OPERATIVA</h2></strong>
+          <strong><h2>${resumen.areaOperativa}</h2></strong>
         </div>
         <div class="col-8">
           <img

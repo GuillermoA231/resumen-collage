@@ -440,7 +440,7 @@ const areasProgramaticas = [
     "nombre": "AREA PROGRAMATICA CENTRO",
     "areasOperativas": [
       {
-        "nombre": "AREA OPERATIVA MARIANO MORENO",
+        "nombre": "MARIANO MORENO",
         "efectores": [
           "CAPS CANAL NORTE",
           "CAPS PABLO VI",
@@ -455,7 +455,7 @@ const areasProgramaticas = [
         ]
       },
       {
-        "nombre": "AREA OPERATIVA NORESTE",
+        "nombre": "NORESTE",
         "efectores": [
           "POLICLÍNICA GINÉS GONZÁLEZ GARCÍA",
           "CAPS VILLA 9 DE JULIO",
@@ -468,7 +468,7 @@ const areasProgramaticas = [
         ]
       },
       {
-        "nombre": "AREA OPERATIVA NOROESTE",
+        "nombre": "NOROESTE",
         "efectores": [
           "POLICLÍNICA SAN RAFAEL",
           "CAPS VILLA MUÑECAS",
@@ -484,7 +484,7 @@ const areasProgramaticas = [
         ]
       },
       {
-        "nombre": "AREA OPERATIVA SUDESTE",
+        "nombre": "SUDESTE",
         "efectores": [
           "POLICLÍNICA SAN CAYETANO",
           "CAPS TTE MATIENZO",
@@ -502,7 +502,7 @@ const areasProgramaticas = [
         ]
       },      
       {
-        "nombre": "AREA OPERATIVA YERBA BUENA",
+        "nombre": "YERBA BUENA",
         "efectores": [
           "CAPS YERBA BUENA",
           "CAPS LOS PINOS",
