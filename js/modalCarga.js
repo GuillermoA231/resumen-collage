@@ -69,8 +69,8 @@ function generarContenido(resumen) {
       </div>
       <div class="row d-flex justify-content-center align-items-center p-0 m-0" id="footer">
         <div class="col-4 rounded text-center justify-content-center flex-wrap flex-grow-1 align-items-center">
-        <strong><h2>AREA OPERATIVA</h2></strong>
-          <strong><h2>${resumen.areaOperativa}</h2></strong>
+        <h2 class="areaOperativaTexto">AREA OPERATIVA</h2>
+          <h2 class="areaOperativaTexto">${resumen.areaOperativa}</h2>
         </div>
         <div class="col-8">
           <img

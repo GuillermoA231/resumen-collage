@@ -15,6 +15,9 @@ main {
 nav {
   background-color: #0199c8;
 }
+.areaOperativaTexto{
+font-weight: bolder;
+}
 .banner-container {
   height: 300px; /* Ajusta la altura deseada */
   width: 100%; /* Ajusta el ancho deseado */
